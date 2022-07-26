@@ -20,7 +20,7 @@
 
   <!-- <InputComp v-model="name" /> -->
 
-  <CardComp>Card content</CardComp>
+  <!-- <CardComp>Card content</CardComp>
   <CardComp><h2>Card content</h2></CardComp>
   <CardComp><img src="https://picsum.photos/200" alt="" /></CardComp>
   <card-comp>
@@ -33,7 +33,25 @@
     <template v-slot:footer>
       <button>View details</button>
     </template>
-  </card-comp>
+  </card-comp> -->
+
+  <NameList>
+    <template v-slot:default="slotProps">
+      {{ slotProps.firstName }} {{ slotProps.lastName }}
+    </template>
+  </NameList>
+
+  <NameList>
+    <template v-slot:default="slotProps">
+      {{ slotProps.lastName }} {{ slotProps.firstName }}
+    </template>
+  </NameList>
+
+  <NameList>
+    <template v-slot:default="slotProps">
+      {{ slotProps.firstName }}
+    </template>
+  </NameList>
 </template>
 
 <script>
@@ -41,7 +59,8 @@
 // import ArticleComp from "./components/ArticleComp.vue";
 // import PopUp from "./components/PopUp.vue";
 // import InputComp from "./components/InputComp.vue";
-import CardComp from "./components/CardComp.vue";
+// import CardComp from "./components/CardComp.vue";
+import NameList from "./components/NameList.vue";
 
 export default {
   name: "App",
@@ -51,7 +70,8 @@ export default {
     // ComponentC,
     // PopUp,
     // InputComp,
-    CardComp,
+    // CardComp,
+    NameList,
   },
   data() {
     return {
