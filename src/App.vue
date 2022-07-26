@@ -15,14 +15,22 @@
   <h3>AppComponent username {{ name }}</h3>
   <ComponentC /> -->
 
-  <button @click="showPopup = true">Show PopUp</button>
-  <PopUp v-show="showPopup" @close="closePopup" />
+  <!-- <button @click="showPopup = true">Show PopUp</button>
+  <PopUp v-show="showPopup" @close="closePopup" /> -->
+
+  <!-- <InputComp v-model="name" /> -->
+
+  <CardComp>Card content</CardComp>
+  <CardComp><h2>Card content</h2></CardComp>
+  <CardComp><img src="https://picsum.photos/200" alt="" /></CardComp>
 </template>
 
 <script>
 // import GreetUser from "./components/GreetUser.vue";
 // import ArticleComp from "./components/ArticleComp.vue";
-import PopUp from "./components/PopUp.vue";
+// import PopUp from "./components/PopUp.vue";
+// import InputComp from "./components/InputComp.vue";
+import CardComp from "./components/CardComp.vue";
 
 export default {
   name: "App",
@@ -30,18 +38,21 @@ export default {
     // GreetUser,
     // ArticleComp,
     // ComponentC,
-    PopUp,
+    // PopUp,
+    // InputComp,
+    CardComp,
   },
   data() {
     return {
-      showPopup: false,
+      //   showPopup: false,
+      name: "",
     };
   },
   methods: {
-    closePopup(value) {
-      this.showPopup = false;
-      console.log(value);
-    },
+    // closePopup(value) {
+    //   this.showPopup = false;
+    //   console.log(value);
+    // },
   },
 };
 </script>
