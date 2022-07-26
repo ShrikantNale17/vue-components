@@ -23,6 +23,17 @@
   <CardComp>Card content</CardComp>
   <CardComp><h2>Card content</h2></CardComp>
   <CardComp><img src="https://picsum.photos/200" alt="" /></CardComp>
+  <card-comp>
+    <template v-slot:header>
+      <h2>Header</h2>
+    </template>
+    <template v-slot:default>
+      <img src="https://picsum.photos/200/300" alt="" />
+    </template>
+    <template v-slot:footer>
+      <button>View details</button>
+    </template>
+  </card-comp>
 </template>
 
 <script>
@@ -64,6 +75,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 20px;
 }
 </style>
