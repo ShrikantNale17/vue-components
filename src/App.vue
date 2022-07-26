@@ -11,33 +11,37 @@
     :isPublished="true"
   /> -->
 
-  <h2>AppComponent</h2>
+  <!-- <h2>AppComponent</h2>
   <h3>AppComponent username {{ name }}</h3>
-  <ComponentC />
+  <ComponentC /> -->
+
+  <button @click="showPopup = true">Show PopUp</button>
+  <PopUp v-show="showPopup" @close="closePopup" />
 </template>
 
 <script>
 // import GreetUser from "./components/GreetUser.vue";
 // import ArticleComp from "./components/ArticleComp.vue";
-import ComponentC from "./components/ComponentC.vue";
+import PopUp from "./components/PopUp.vue";
 
 export default {
   name: "App",
   components: {
     // GreetUser,
     // ArticleComp,
-    ComponentC,
+    // ComponentC,
+    PopUp,
   },
   data() {
     return {
-      name: "Shrikant",
-      channel: "Codevolution",
+      showPopup: false,
     };
   },
-  provide() {
-    return {
-      username: this.name,
-    };
+  methods: {
+    closePopup(value) {
+      this.showPopup = false;
+      console.log(value);
+    },
   },
 };
 </script>
