@@ -53,11 +53,15 @@
     </template>
   </NameList> -->
 
-  <h4>Parent Style Component</h4>
-  <!-- <ChildStyles /> -->
+  <!-- <h4>Parent Style Component</h4>
   <ChildStyles>
     <h4>Childs slot style</h4>
-  </ChildStyles>
+  </ChildStyles> -->
+
+  <button @click="activeTab = 'TabA'">Tab A</button>
+  <button @click="activeTab = 'TabB'">Tab B</button>
+  <button @click="activeTab = 'TabC'">Tab C</button>
+  <component :is="activeTab"></component>
 </template>
 
 <script>
@@ -67,7 +71,10 @@
 // import InputComp from "./components/InputComp.vue";
 // import CardComp from "./components/CardComp.vue";
 // import NameList from "./components/NameList.vue";
-import ChildStyles from "./components/ChildStyles.vue";
+// import ChildStyles from "./components/ChildStyles.vue";
+import TabA from "./components/TabA.vue";
+import TabB from "./components/TabB.vue";
+import TabC from "./components/TabC.vue";
 
 export default {
   name: "App",
@@ -79,12 +86,16 @@ export default {
     // InputComp,
     // CardComp,
     // NameList,
-    ChildStyles,
+    // ChildStyles,
+    TabA,
+    TabB,
+    TabC,
   },
   data() {
     return {
       //   showPopup: false,
-      name: "",
+      //   name: "",
+      activeTab: "TabA",
     };
   },
   methods: {
